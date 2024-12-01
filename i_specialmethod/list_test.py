@@ -7,27 +7,12 @@ def test_append():
     for i in range(10):
         list.append(i**2)
     # print(list.__length)
-    print(sum(list))
+    print(list)
     # return list
-    for e in list:
-        print(e)
+    # for e in list:
+    #     print(e)
 # test_append()
 # print(type(test_append()))
-
-def test_append_basic2() :
-    list = LinkedList()
-
-    for i in range(10) :
-        list.append(i**2)
-    
-    # for i in range(10) :
-    #     print(list.get(i))
-
-    for e in list :
-        print(e)
-    # print(list.__dict__)
-    # print(list)
-# test_append_basic2()
 
 def test_get():
     list = LinkedList()
@@ -36,7 +21,7 @@ def test_get():
         list.append(i**2)
     print(list)
     print(list.get(5))
-test_get()
+# test_get()
 
 def test_prepend():
     list = LinkedList()
@@ -53,10 +38,10 @@ def test_insert():
     
     for i in range(10):
         list.append(i)
-        
+    print(list)
     list.insert(4, 10000)
     print(list)
-# test_insert()
+test_insert()
 
 def test_pop():
     list = LinkedList()
@@ -67,14 +52,15 @@ def test_pop():
     print(list.pop())
     print(list)
 # test_pop()
+
 def test_remove():
     list = LinkedList()
     for i in range(10):
         list.append(i**2)
     
-    # print(list)
-    # print(list.remove(25))
-    # print(list)
+    print(list)
+    print(list.remove(1))
+    print(list)
 # test_remove()
 def list_comprehension():
     """

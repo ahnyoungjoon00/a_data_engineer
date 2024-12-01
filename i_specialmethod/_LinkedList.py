@@ -84,9 +84,17 @@ class LinkedList:
     def insert(self, idx, data):
         node = Node(data)
         if(idx < 0 or idx >= self.__length):
-            raise IndexError(f'length : {self.__length}')
-        if(idx == 0):
-            node.prepend()
+            raise IndexError(f'length : {self.__length}, {idx}는 유효하지 않은 index입니다.')
+
+        current = self.__head
+        for _ in range(0, idx):
+            current = current.next
+        node.next = current
+        node.prev = current.prev
+        
+        current.prev.next = node
+        current.prev = node
+        self.__length += 1
 
     def pop(self):
         """ 
@@ -97,14 +105,12 @@ class LinkedList:
             return
         else :
             current = self.__head
-            while(current.next):
+            while current.next :
                 current = current.next
-            current = self.__head
-            current.prev = None
-            current.next = None
-            current = self.__head.prev
-            # self.__length -= 1
-
+            node = current.prev
+            node.next = None
+            # current.prev.next = None
+        return current.data
     
     # 매개변수로 전달받은 data를 삭제하고 성공여부를 True/False 로 반환
     def remove(self, data):
