@@ -15,4 +15,3 @@ class QRGenerator :
         img.save(img_bytes)
         img_bytes.seek(0)
         return img_bytes.read()
-        # img_2.save(f"{filename}.png")

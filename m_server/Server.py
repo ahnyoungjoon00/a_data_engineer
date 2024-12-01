@@ -35,10 +35,12 @@ class Server :
             # ex) '/qr'?query1=a&query2=b&query3=c
             url_tokens = req_url.split("?")
             path = url_tokens[0]
+
             if len(url_tokens) >= 2 :
                 query_string = url_tokens[1]
-                param_dict = {}
+
                 # [query1=a, query2=b, query3=c]
+                param_dict = {}
                 params = query_string.split("&")
 
                 for e in params :
@@ -49,7 +51,7 @@ class Server :
                 client_socket.send(b'Content-Disposition: attachment; filename="qr.jpg"\n\n')
 
                 qr = QRGenerator()
-                # client_socket.send(qr.generate(param_dict[token[0]]))
+                client_socket.send(qr.generate(param_dict[token[0]]))
                 # client_socket.send(bytes(param_dict[token[0]], encoding = "utf-8"))
                 
                 client_socket.close()
