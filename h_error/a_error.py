@@ -1,7 +1,6 @@
 from random import randrange
 import traceback
 
-# 예외처리 1. 로직을 잘 작성한다.
 def study_error():
     while(True):
         inp = input('숫자: ')
@@ -11,14 +10,15 @@ def study_error():
         if(not inp.isnumeric()):
             print('숫자를 입력하세요')
             continue
-        
-        if(inp == '0'):
-            print('0은 안돼')
+        if(inp == "0") :
+            print("0은 계산 불가!")
             continue
 
         num = int(inp)
-        random = randrange(1, 10)
+        random = randrange(1, 500, 5)
         print(f'{random}/{num} = {random/num}')
+
+# study_error() # 숫자인 0을 입력할 경우에는?
 
 def study_error2():
     """
@@ -34,14 +34,14 @@ def study_error2():
                 break
 
             num = int(inp)
-            random = randrange(1, 10)
+            random = randrange(1, 500, 5)
             print(f'{random}/{num} = {random/num}')
 
-        except ZeroDivisionError as e:
+        except ZeroDivisionError :
             print('0은 입력할 수 없습니다.')
-            print(e)
-        except ValueError:
-            print('숫자를 입력하세요')
+        except ValueError as e:
+            print(f'{e}숫자를 입력하세요')
+# study_error2()
 
 def study_error3():
     while(True):
@@ -83,4 +83,4 @@ def study_error4():
             print('====================')
 
 
-study_error4()
+# study_error4()

@@ -46,10 +46,10 @@ class Server :
                     param_dict[token[0]] = token[1]
                 
                 client_socket.send(b'HTTP/1.1 200 OK\n')
-                # client_socket.send(b'Content-Disposition: attachment; filename="qr.jpg"\n\n')
+                client_socket.send(b'Content-Disposition: attachment; filename="qr.jpg"\n\n')
 
                 qr = QRGenerator()
-                client_socket.send(qr.generate(param_dict[token[0]]))
+                # client_socket.send(qr.generate(param_dict[token[0]]))
                 # client_socket.send(bytes(param_dict[token[0]], encoding = "utf-8"))
                 
                 client_socket.close()

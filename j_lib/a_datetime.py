@@ -26,9 +26,9 @@ def study_datetime():
     print(f'{year}년 {month}월 {day}일')
     print(f'{hour}시 {minute}분 {second}초')
 
-    christmas = datetime(2024, 12, 25)
+    christmas = datetime(2024, 12, 25, 11, 30, 15)
     print(christmas)
-
+# study_datetime()
 def study_timedelta():
     now = datetime.now()
     print(now)
@@ -37,7 +37,7 @@ def study_timedelta():
     print(now + timedelta(days=5, hours=3))
 
 
-#study_timedelta()
+# study_timedelta()
 
 # 사용자로부터 yyyy-mm-dd 양식으로 입력받은 날짜
 # 가 오늘로부터 며칠 남았는지, 혹은 지났는지 계산하는

@@ -129,7 +129,7 @@ def q5():
         msg = input('msg: ')
         if(balance < 5000):
             print('잔액이 모자랍니다.')
-            break;
+            break
         
         if('강아지' in msg or '새' in msg):
             print('비속어는 쓰실 수 없습니다.')
@@ -139,7 +139,7 @@ def q5():
         print(f'[{id}]: {msg} ({balance}원)')
 
         if(msg == 'exit'):
-            break;
+            break
 
 def valid(card):
     """

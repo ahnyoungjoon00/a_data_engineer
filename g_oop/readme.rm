@@ -1,0 +1,9 @@
+객체지향의 사실과 오해
+
+객체지향 프로그래밍을 할땐
+설계단계에서 class diagram을 먼저 그려보고 시작
+intellij의 경우 프로그래밍한 폴더 or py 그룹을 idle 상에서 즉시 class diagram으로 보여주는 기능이 있기도 함
+
+
+extention 설치 : python getter setter 하면
+getter setter 구성 단축키 :(ctrl + shift + p)
