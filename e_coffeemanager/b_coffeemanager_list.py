@@ -1,57 +1,66 @@
-def main():
+def main() :
     """
-    음료판매관리프로그램
+    음료 판매 관리 프로그램
     """
-    # 음료관련 데이터
-    names = ['아메리카노', '모카', '라떼']
-    prices = [3000, 4000, 5000]
-    stocks = [10, 10, 10]
+    # 데이터
+    name_lst = ["아메리카노", "모카", "라떼"]
+    price_lst = [3000, 4000, 5000]
+    stack_list = [10, 10, 10]
 
-    sales_price = 0 # 매출
+    sales_price = 0 
 
-    while(True):
-        print('\n==========Index==========')
-        print('음료판매(1)')
-        print('현황(2)')
-        print('종료(3)')
-        menu = int(input('입력: '))
+    while(True) :
+        print("\n==========Index==========")
+        print("음료판매(1) : ")
+        print("현황(2) : ")
+        print("종료(3) : ")
+        menu = int(input("입력 : "))
 
-        if(menu == 1):
-            print('\n==========Menu==========')
-            for name in names:
-                print(f'{name}({names.index(name)})')
+        if (menu == 1) :
+            print("===========Menu==========")
+            # for name in name_lst :
+            #     print(f"{name}({name_lst.index(name)})")
+            for i in range(len(name_lst)) :
+                print(f"{name_lst[i]}({i})")
 
-            drink = int(input('\n * 음료코드: '))
-            order_cnt = int(input(' * 주문수량: '))
+            # 사용자가 입력한 음료코드가 유효한 음료코드인지 검증,
+            # 유효하지 않다면 Index로 돌려보내는 검증로직 작성,
+            # "유효하지 않은 음료코드입니다."
 
-            # 사용자가 입력한 음료코드가 유효한 음료코드인지 검증하고, 
-            # 유효하지 않다면 Index로 돌려보내는 검증로직을 작성하세요.
-            # '유효하지 않은 음료코드입니다.'
+            drink = int(input("\n * 음료코드 : "))
 
-            if(drink < 0 or drink >= len(names)):
-                print('유효하지 않은 음료코드입니다.')
+            if drink not in range(len(name_lst)) :
+                print("유효하지 않은 음료코드입니다.")
                 continue
 
-            if(stocks[drink] < order_cnt):
-                print('재고가 없습니다.')
+            order_cnt = int(input(" * 주문량 : "))
+            if (stack_list[drink] < order_cnt) :
+                print("재고가 없습니다.")
                 continue
+            
+            print()
+            stack_list[drink] -= order_cnt
+            sales_price += price_lst[drink]*order_cnt
 
-            stocks[drink] -= order_cnt
-            sales_price += prices[drink] * order_cnt
+            print(f"제품명 : {name_lst[drink]}")
+            print(f"판매가 : {price_lst[drink]}")
+            print(f"판매수량 : {order_cnt}")
+            print(f"결제금액 : {price_lst[drink]*order_cnt}")
+            print(f"재고 : {stack_list[drink]}")
 
-            print(f'\n제품명: {names[drink]}')
-            print(f'판매가: {prices[drink]}')
-            print(f'판매수량: {order_cnt}' )
-            print(f'결제금액: {prices[drink] * order_cnt}')
-            print(f'남은 재고: {stocks[drink]}')
-        
-        elif(menu == 2):
-            print('\n==========Status==========')
-            for i in range(0, len(names)):
-                print(f'{names[i]} | 재고: {stocks[i]}')
 
-        elif(menu == 3):
-            print('종료합니다.')
+        elif (menu == 2) :
+            print("==========Status==========")
+            for i in range(len(name_lst)) :
+                print(f"{name_lst[i]} | 재고 : {stack_list[i]}")
+
+            print(f"\n매출 : {sales_price}")
+
+        elif (menu == 3) :
+            print("종료합니다.")
             break
-
+        
+        else :
+            print("잘못된 입력입니다.")
+            continue
 main()

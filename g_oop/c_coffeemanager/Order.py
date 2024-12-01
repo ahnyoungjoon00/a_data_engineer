@@ -11,6 +11,8 @@ class Order:
         self.__order_info = f'{coffee.name}[{cnt}잔]'
         self._order_status = OrderStatus.check_order_status(self)
 
+        # if(cnt > coffee.stock):
+        #     self.__cnt = 0 # 주문이 불가능한 상황이면 주문수량을 0으로 변경
     @property
     def order_status(self):
         return self._order_status

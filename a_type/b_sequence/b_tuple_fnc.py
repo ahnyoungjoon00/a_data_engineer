@@ -2,14 +2,12 @@ def fnc1():
     """
     a = (1, 'a', True, (1,2,3))
     b = (1.1, None)
-
     두 튜플을 합쳐 c 변수에 할당하세요.
     """
     a = (1, 'a', True, (1,2,3))
     b = (1.1, None)
     c = a + b
     print(c)
-
 
 def fnc2():
     """
@@ -18,7 +16,6 @@ def fnc2():
     """
     a = (1, 'a', True, (1,2,3), 1.1, None)
     print(a[1::2])
-
 
 def fnc3():
     """
@@ -34,8 +31,7 @@ def fnc4():
     a의 가장 작은 요소와 가장 큰 요소의 합을 구하시오.
     """
     a = (30, 8, 900, 77, -9, 100)
-    print(min(a) + max(a))
-
+    print(max(a) + min(a))
 
 def fnc5():
     """
@@ -45,11 +41,9 @@ def fnc5():
     a = (30, 8, 900, 7, -9, 100, 7)
     print(a.count(7))
 
+
 fnc1()
 fnc2()
 fnc3()
 fnc4()
 fnc5()
-
-
-# 1등 : 스타벅스기프티콘

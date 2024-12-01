@@ -66,26 +66,26 @@ def main():
 
 main()
 
-def study_copy():
-    americano = {'name': '아메리카노', 'price': 3000, 'stock': 10 }
-    moca = {'name': '모카', 'price': 4000, 'stock': 10}
-    latte = {'name': '라떼', 'price': 5000, 'stock': 10}
-    drinks = [americano, moca, latte]
+# def study_copy():
+#     americano = {'name': '아메리카노', 'price': 3000, 'stock': 10 }
+#     moca = {'name': '모카', 'price': 4000, 'stock': 10}
+#     latte = {'name': '라떼', 'price': 5000, 'stock': 10}
+#     drinks = [americano, moca, latte]
 
-    # 얕은 복사
-    # copied = drinks.copy()
-    # copied[0]['name'] = '파이썬'
+#     # 얕은 복사
+#     # copied = drinks.copy()
+#     # copied[0]['name'] = '파이썬'
 
-    deep_copied = copy.deepcopy(drinks)
-    deep_copied[0]['name'] = '파이썬'
+#     deep_copied = copy.deepcopy(drinks)
+#     deep_copied[0]['name'] = '파이썬'
     
-    print(deep_copied)
-    print(drinks)
+#     print(deep_copied)
+#     print(drinks)
 
-    print(id(drinks))
-    print(id(deep_copied))
+#     print(id(drinks))
+#     print(id(deep_copied))
 
-    print(id(drinks[0]))
-    print(id(deep_copied[0]))
+#     print(id(drinks[0]))
+#     print(id(deep_copied[0]))
 
-study_copy()
+# study_copy()

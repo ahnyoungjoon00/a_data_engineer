@@ -1,5 +1,5 @@
-# 패키지로 사용되는 폴더에는 __init__ 모듈이 존재해야한다.
-# 패키지가 import될 때 한번 실행되는 스크립트 파일
-print('util.__init__')
-
-
+"""
+패키지로 사용되는 폴더에는 
+"""
+import utils
+print(utils.__init__)

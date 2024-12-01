@@ -1,32 +1,30 @@
 """
 문자열 연산자
 문자열 결합
-문자열 반복 
+문자열 반복
 문자열 포함여부 확인
 """
+a, b = "hello", "world"
 
-a, b = 'hello', 'world'
+print(a + " " + b)
 
-# helloworld로 만들고 싶다면
-print(a + b)
+print(a + " " + (b + "! ") * 3)
 
-# helloworldworldworld
-print(a + b * 3)
+print("i" in a)
+print("he" in a)
 
-# hello 안에 he 지 확인
-print('he' in a)
 
 """
-사용자에게 입력받은 메세지를 출력해주는 프로그램을 구현하시오
-메세지는 [{id}]: {message}
-형식으로 출력합니다.
+사용자에게 입력받은 메세지를 출력해주는 프로그램 구현하시오.
+메세지는 [id] : massage 형식으로 출력
 """
-id = input('id: ')
-message = input('message: ')
-print('[' + id + ']: ' + message)
+id = input("id : ")
+massage = "no sb keep going", "it is what it is" # input("massage : ")
+print("[" + id + "] :", massage)
 
-# f-strings
-print(f'[{id:30}]: {message}')
+print(f"[{id}] : {massage}")
+print(f"[{id}] : {massage}" + " it is what it is")
 
-print('a', 'b', 'c', 'd', sep='/', end='\n')
-print('a', 'b', 'c', 'd', sep='/', end='\n')
+print(f"[{id:30}] : {massage!r} {massage!a}")
+
+print("a", "b", "c", "d", sep = "/", end = "!!")

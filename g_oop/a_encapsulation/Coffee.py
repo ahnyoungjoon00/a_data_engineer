@@ -26,7 +26,7 @@ __init__ : 초기화 함수
 class Coffee:
     def __init__(self, name, stock, price):
         #__ : 이 속성은 외부에서 접근하지 않아야 합니다.
-        # print('init의 self: ', self)
+        print('init의 self: ', self)
 
         # 속성, attribute
         # instance 변수
@@ -39,11 +39,6 @@ class Coffee:
     def get_name(self):
         return self.__name
     
-    def get_price(self):
-        return self.__price
-        
-
-    
     # setter
     def set_name(self, name):
         if(not name): # str은 공백문자열이면 False
@@ -51,7 +46,8 @@ class Coffee:
             return
         self.__name = name
 
-
+    def get_price(self):
+        return self.__price
     
     # 데코레이터 함수위에 선언해 함수에 특수한 기능을 추가해주는 기능
     @property
