@@ -4,11 +4,13 @@ class Node:
         self.prev = None
         self.next = None # 다음 노드의 주소를 저장
 
-def node(data) :
-    data = data
-    prev = None
-    next = None
-    return prev, data, next
+# 위와 동일한 역할을 그냥함수로 구성
+# def node(data) :
+#     data = data
+#     prev = None
+#     next = None
+#     return prev, data, next
+
 class LinkedList:
     """
     duck typing : 만약 어떤 새가 오리처럼 걷고, 헤엄치고, 
@@ -16,16 +18,15 @@ class LinkedList:
     오리타입을 상속받지 않더라도, 오리타입에 선언된 기능을 구현하고 있다면
     해당 클래스는 오리탑으로 다룰 수 있는 것으로 간주한다.
     """
-
     def __init__(self):
         self.__head = None # 첫번째 노드의 주소를 저장
         self.__length = 0  # 리스트의 길이
+
 
     def append(self, data):
         node = Node(data)
 
         if(self.__head == None):
-            self.prev = None
             self.__head = node
             self.__length += 1
             return
@@ -67,16 +68,17 @@ class LinkedList:
     # list의 가장 앞에 노드를 추가
     def prepend(self, data):
         node = Node(data)
+
         self.__length += 1
         if (self.__head == None) :
-            node.prev = None
+            # node.prev = None
             self.__head = node
-            node.next = None
+            # node.next = None
         else :
             self.__head.prev = node
             node.next = self.__head
             self.__head = node
-            self.__head.prev = None
+            # self.__head.prev = None
 
     # 인자로 전달받은 i에 노드를 추가
     def insert(self, idx, data):

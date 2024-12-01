@@ -4,7 +4,7 @@ import traceback
 
 if __name__ == "__main__" :
     try :
-        api = NaverAPI(1)
+        api = NaverAPI(10)
         api.connect()
     except IllegalPropertyError as e:
         print(e)

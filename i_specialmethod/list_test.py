@@ -11,7 +11,7 @@ def test_append():
     # return list
     for e in list:
         print(e)
-test_append()
+# test_append()
 # print(type(test_append()))
 
 def test_append_basic2() :
@@ -27,13 +27,22 @@ def test_append_basic2() :
         print(e)
     # print(list.__dict__)
     # print(list)
-test_append_basic2()
+# test_append_basic2()
+
+def test_get():
+    list = LinkedList()
+    
+    for i in range(10):
+        list.append(i**2)
+    print(list)
+    print(list.get(5))
+test_get()
 
 def test_prepend():
     list = LinkedList()
 
     list.prepend(5555555)
-    for i in range(11,100, 5):
+    for i in range(10,50, 5):
         list.append(i)
         
     list.prepend(10000)
