@@ -1,0 +1,69 @@
+.bgImg{
+    width: 100%;
+    height: 100%;
+    background-image:url(./assets/img/nature.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header{
+    width:100vw;
+    height:10vh;
+    display:flex;
+    justify-content: flex-end;
+
+}
+.logo{
+    width:10vw;
+    /* font-size:10pt; */
+    /* text-align:center; */
+    color:aliceblue;
+    display:flex;
+    justify-content:center;
+    align-self:center;
+}
+.logo_txt{
+    font-size:200pt;
+    font-style: italic;
+    align-self:center;
+}
+.section{
+    width:100vw;
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-self:center;
+    align-items:center;
+}
+.section_box{
+    width:50vw;
+    height:40vh;
+    border-radius:10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.section_text{
+    font-size:4vw;
+    display:flex;
+    align-self:center;
+    align-items:center;
+    color:white;
+}
+.qr_form{
+    width: 30vw;
+    height: 7vh;
+    border:5px;
+    padding: 0.7vmax;
+    border-radius:20px;
+    background-color: white;
+    align-self:center;
+    align-items:center;
+}
+.footer{
+    width:100vw;
+    height:10vh;
+    display:flex;
+    justify-content: flex-start;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/assets/css/css01.css" rel="stylesheet" type="text/css">
+    <style>
+        div{
+            background-color: red;
+        }
+    </style>
+    <!-- 
+        href : 자원의 경로
+        rel = 문서와 자원의 관계를 명시
+        type : mime type
+
+        css 우선순위
+        전체 선책자 > 태그 선책자 > 클래스 선택자 > 아이디 선택자 >!important
+    -->
+</head>
+<body>
+    <div>1. 내부 스타일 시트</div>
+    <div class="outer">2. 외부 스타일 시트</div>
+    <div style="background-color:blue;">3. 스타일 속성</div>
+    
+</body>
+</html>

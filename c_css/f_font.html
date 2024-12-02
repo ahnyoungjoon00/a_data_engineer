@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        CSS단위 :
+            절대길이 : px(1/96 inch), pt, cm, mm 등 -- 해상도에 따라 변형 발생 가능
+            상대길이 : 
+                vw : 사용자에게 보여지는 영역(viewport)의 width를 기준으로 하는 단위
+                    1vw = viewport width의 1%
+                vh : 사용자에게 보여지는 영역(viewport)의 height를 기준으로 하는 단위
+                    1vh = viewport height의 1%
+                vmin : vw, vh 중에서 작은 차수의 % 단위로
+                vmax : vw, vh 중에서 큰 차수의 % 단위로
+                em(equal m) : 상위 요소 폰트의 "m" 크기를 기준으로 하는 단위
+                ex(equal x) : 상위 요소 폰트의 "x" 크기를 기준으로 하는 단위
+                    -> m, x가 가로세로비가 가장 비슷해서
+                rem(root equal m) : 루트 요소 폰트의 "m" 크기를 기준으로 사용하는 단위
+
+                -- 반응형 모듈의 경우 상위 요소에서 타고 들어올때 맞춰서 보여주는게 제일 자연스러움
+    -->
+    <style>
+        p{
+            /* 
+            이거는 각 요소를 하나하나 정하는 방식
+            font-size:5vh;
+            font-family:"궁서";
+            font-style: italic;
+            line-height: 5vw;
+            font-variant: small-caps;
+            default값은 폰트사이즈와 같게 되어있음
+             */
+             font:italic small-caps 900 5vh/5vw "궁서"
+        }
+    </style>
+</head>
+<body>
+    <p>CSS Font 속성</p>
+    <div>
+        <p>CSS Font 속성<br>
+            CSS Font 속성
+        </p>
+    </div>
+</body>
+</html>

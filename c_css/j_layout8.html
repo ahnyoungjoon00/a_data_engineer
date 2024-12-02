@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            display:flex;
+            height:300px;
+            border-style:solid;
+        }
+        .item{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>item >> align-self:개별 item을 교차축 기준으로 정렬</h1>
+    <pre>
+        auto : align-items 속성값을 그대로 사용. default
+        flex-start
+        flex-end
+        center
+    </pre>
+
+    <hr>
+    
+    <h2>align-items:flex-start; align-self:auto</h2>
+    <div class="row"
+        style="align-items:flex-end;">
+    <div class="item" style="background-color: red; align-self:auto;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+
+    <h2>align-items:flex-start; align-self:flex-start</h2>
+    <div class="row"
+        style="align-items:center;">
+    <div class="item" style="background-color: red; align-self:flex-start;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+
+    <h2>align-items:flex-start; align-self:flex-end;</h2>
+    <div class="row"
+        style="align-items:flex-start;">
+    <div class="item" style="background-color: red; align-self:flex-end;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+
+    <h2>align-items:flex-start; align-self:center;</h2>
+    <div class="row"
+        style="align-items:flex-end;">
+    <div class="item" style="background-color: red; align-self:center;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+</body>
+</html>

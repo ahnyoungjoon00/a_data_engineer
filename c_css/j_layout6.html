@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            display: flex;
+        }
+        .item{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>container >> justify-content</h1>
+    <pre>
+        justify-content:주축에 대한 정렬방식을 설정
+            flex-start:default, item을 시작점부터 정렬
+            flex-end:item을 끝점부터 정렬
+            center:가운데 정렬
+            space-around:item을 일정한 간격으로 정렬
+            space-between:일정한 간격으로 정렬, 시작/끝 item를 컨테이너의 시작/끝 지점에 배치
+    </pre>
+
+    <hr>
+
+    <h2>justify-content:flex-start</h2>
+    <div class="row"
+        style="justify-content: flex-start;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>justify-content:flex-end</h2>
+    <div class="row"
+        style="justify-content: flex-end;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>justify-content:center</h2>
+    <div class="row"
+        style="justify-content: center;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>justify-content:space-around</h2>
+    <div class="row"
+        style="justify-content:space-around;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>justify-content:space-between</h2>
+    <div class="row"
+        style="justify-content:space-between;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+
+</body>
+</html>

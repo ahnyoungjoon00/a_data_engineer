@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./button.css"> -->
+    <style>
+        #translateX{
+            /* 요소크기의 상대값으로 %만큼 이동 */
+            transform:translateX(50%);
+        }
+        #translateY{
+            transform:translateY(50%);
+        }
+        #translate{
+            transform:translate(50%, 50%);
+            transform:rotate(180deg);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>transform</h1>
+    <h2>transform:translate</h2>
+    <div id="translateX" class="btn btn_red">translateX : 요소를 X축으로 이동</div>
+    <div id="translateY" class="btn btn_red">translateY : 요소를 Y축으로 이동</div>
+    <div id="translate" class="btn btn_red">translate : 요소를 X,Y축으로 이동</div>
+</body>
+</html>

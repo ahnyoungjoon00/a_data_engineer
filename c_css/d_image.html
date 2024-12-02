@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            background-color:lightyellow;
+            width:700px;
+            height:200px;
+        }
+        .contain{
+            object-fit: contain;
+        }
+        .cover{
+            object-fit: cover;
+        }
+        .fill{
+            object-fit: fill;
+        }
+        .none{
+            object-fit: none;
+            object-position: 50% 50%;
+            /* 이미지 이동
+            object-position: 100px 100px;
+            */
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지</h1>
+    <ul>
+        <li>
+            <h3>contain</h3>
+            <p>콘텐츠의 가로세로비를 유지하며 크기를 맞춤</p>
+            <img class="contain", src="./assets/img/flower3.PNG">
+        </li>
+        <li>
+            <h3>cover</h3>
+            <p>콘텐츠를 요소에 가득 채움</p>
+            <img class="cover", src="./assets/img/flower3.PNG">
+        </li>
+        <li>
+            <h3>fill</h3>
+            <p>콘텐츠의 가로세로비를 수정해 요소를 가득 채움</p>
+            <img class="fill", src="./assets/img/flower3.PNG">
+        </li>
+        <li>
+            <h3>none</h3>
+            <p>콘텐츠의 크기를 조절하지 않고 가운데 배치</p>
+            <img class="none", src="./assets/img/flower3.PNG">
+        </li>
+    </ul>
+    
+</body>
+</html>

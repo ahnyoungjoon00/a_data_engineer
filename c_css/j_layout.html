@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            background-color: lightyellow;
+            width:50vw;
+            height:15vw;
+        }
+        .child{
+            background-color: lightblue;
+            /* height:10vw; */
+        }
+        div{
+            margin-top:30px;
+            margin-bottom:30px;
+            margin-right:30px;
+            margin-left:30px;
+        }
+        /* == div{margin:top right bottom left} 순서로 축약지정 가능
+         */
+        span{
+            margin-top:30px;
+            margin-bottom:30px;
+            margin-right:30px;
+            margin-left:30px;
+        }
+                /* == span{margin:top right bottom left} 형태로 축약지정 가능
+         */
+    </style>
+</head>
+<body>
+    <!-- 
+        html tag의 화면상 분류
+        1. 화면에 표시가 되지 않는 tag(head, meta, title, ...)
+        2. 화면에 표시가 되는 tag
+            2-1. block level(css display 속성의 기본값이 block)
+                한 줄에 한 요소만 위치할 수 있다.
+                모든 방향에 대해 margin을 지정할 수 있다.
+                width, height 속성 사용 가능
+            2-2. inline level(css display 속성의 기본값이 inline)
+                한 줄에 여러 요소를 위치 시킬 수 있다.
+                
+                좌우 방향에 대해서만 margin 지정이 가능하다.
+                width, height 속성 사용 불가
+    -->
+
+    <h1>1. block/inline 요소의 영역</h1>
+    <div class="parent">
+        block level element
+        <div class="child">
+            block요소의 너비는 부모의 element와 동일하다.<br>
+            지정하지 않을 시, content에 따라 높이는 따로
+        </div>
+    </div>
+
+    <hr>
+
+    <span class="parent"
+        style="width:3000000vw; height:1000000vw">
+        inline level element
+        <span class="child">
+            inline 요소
+        </span>
+    </span>
+
+    <hr>
+
+    <h1>margin 상쇄</h1>
+    <pre>
+        margin-top,margin-bottom 영역이 겹칠 경우
+        두 요소 중 margin값이 큰 요소의 margin값만 적용된다.
+    </pre>
+
+    <div class="parent" style="margin-bottom:30px;">
+        block level element
+        <div class="child">
+            block요소의 너비는 부모의 element와 동일하다.
+        </div>
+    </div>
+    <div class="parent">
+        block level element
+        <div class="child">
+            block요소의 너비는 부모의 element와 동일하다.
+        </div>
+    </div>
+
+    <hr>
+
+    <span class="parent" 
+        style="width:3000000vw;height:1000000vw">
+        inline level element
+        <span class="child">
+            inline 요소
+        </span>
+    </span>
+    <span class="parent" 
+        style="width:3000000vw; height:1000000vw">
+        inline level element
+        <span class="child">
+            inline 요소
+        </span>
+    </span>
+</body>
+</html>

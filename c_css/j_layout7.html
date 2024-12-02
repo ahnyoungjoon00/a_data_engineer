@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            display:flex;
+            height:300px;
+            border-style:solid;
+        }
+        .item{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>container >> align-items</h1>
+    <pre>
+        align-items : 교차축에 대한 정렬방식을 설정
+                    flex-start:default, item을 시작점부터 정렬
+                    flex-end:item을 끝점부터 정렬
+                    center:가운데 정렬
+    </pre>
+
+    <h2>align-items:flex-start</h2>
+    <div class="row"
+        style="align-items:flex-start;">
+    <div class="item" style="background-color: red;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-items:flex-end</h2>
+    <div class="row"
+        style="align-items:flex-end;">
+    <div class="item" style="background-color: red;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-items:center</h2>
+    <div class="row"
+        style="align-items:center;">
+    <div class="item" style="background-color: red;"></div>
+    <div class="item" style="background-color: orange;"></div>
+    <div class="item" style="background-color: yellow;"></div>
+    <div class="item" style="background-color: green;"></div>
+    <div class="item" style="background-color: blue;"></div>
+    </div>
+
+</body>
+</html>

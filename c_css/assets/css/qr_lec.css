@@ -1,0 +1,58 @@
+.header{
+    width:100vw;
+    height:10vh;
+    display:flex;
+    justify-content: flex-end;
+
+}
+.logo{
+    width:10vw;
+    /* font-size:10pt; */
+    /* text-align:center; */
+    color:aliceblue;
+    display:flex;
+    justify-content:center;
+    align-self:center;
+}
+.logo_txt{
+    font-size:20pt;
+    font-style:italic;
+    align-self:center;
+}
+.section{
+    width:100vw;
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-self:center;
+    align-items:center;
+}
+
+.content{
+    flex-direction: column;
+    width:60vw;
+    height: 50vh;
+}
+.mainbanner{
+    flex-direction: column;
+    width:40vw;
+    height:20vh;
+    font-size: 2vw;
+}
+.clock{
+    margin-top: 2vh;
+}
+.inp_qr{
+    width:40vw;
+    border:0;
+    border-radius: 2vw;
+    font-size:3vw;
+    outline:none;
+}
+
+.footer{
+    width:100vw;
+    height:10vh;
+    display:flex;
+    justify-content: flex-start;
+}

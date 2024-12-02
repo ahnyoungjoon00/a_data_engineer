@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            display: flex;
+            height:500px;
+            border-style: solid;
+        }
+        .wrap{
+            flex-wrap: wrap;
+        }
+        .item{
+            width:48vw;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>container >> align-content</h1>
+    <pre>
+        align-content:item이 여러 줄로 표현될 경우(flex-wrap:wrap|nowrap)
+                      item의 교차축 정렬방식을 사용
+                normal:default
+                flex-start
+                flex-end
+                center
+                space-around
+                space-between
+    </pre>
+    <h2>align-content:normal</h2>
+    <div class="row wrap"
+        style="align-content: normal;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-content:flex-start</h2>
+    <div class="row wrap"
+        style="align-content: flex-start;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-content:flex-end</h2>
+    <div class="row wrap"
+        style="align-content: flex-end;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-content:center</h2>
+    <div class="row wrap"
+        style="align-content: center;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-content:space-around</h2>
+    <div class="row wrap"
+        style="align-content: space-around;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>align-content:space-between</h2>
+    <div class="row wrap"
+        style="align-content: space-between;">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    
+</body>
+</html>

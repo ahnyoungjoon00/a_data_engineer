@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightyellow;
+        }
+        #bgColor{
+            background-color: rgba(39, 0, 139, 1);
+        }
+        #bgImg{
+            width: 1024px;
+            height: 800px;
+            border: solid;
+            background-image: url("./assets/img/forest1.PNG");
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* 
+                backgroud-size : cover; 배경이미지가 모두 나오도록 이미지를 확대/축소
+                background-size: 1024px 800px; 정한 배경범위에 딱맞게
+                background-size: 50% auto; 가로의 50%로 세로의 비율이 맞게 변경
+                background-size: contain; 이미지 비율이 깨지지 않는 선에서 가장 크게 맞춰서
+            */
+            background-position: center;
+        }
+        /* F12 눌러서 컨텐츠별 영역그림을 확인할 수 있다. 보아라 */
+        .bg-clip{
+            width:300px;
+            height:300px;
+            padding:30px;
+            margin:30px;
+            border:dashed;
+            border-width:20px;
+        }
+
+        #bgClip1{
+            background-image: url(./assets/img/river2.PNG);
+            background-clip: content-box
+        }
+        #bgClip2{
+            background-image: url(./assets/img/river2.PNG);
+            background-clip: padding-box
+        }
+        #bgClip3{
+            background-image: url(./assets/img/river2.PNG);
+            background-clip: border-box
+        }
+        #bgClip4{
+            background-image: url(./assets/img/river2.PNG);
+            background-clip:text;
+            /* 
+                vendor prefix 
+                웹표준에 들어가지 않은 실험적인 기능을 사용할 때
+                해당 속성 앞에 지원이 되지 않을 수 있는 브라우저의 접두사를 붙여주는 것
+            */
+            -moz-background-clip: text;
+            color:transparent;
+            font-size:8vw;
+            font-weight:900;
+        }
+    </style>
+</head>
+<body>
+    <h1>배경색, 배경 이미지</h1>
+    <pre>
+        background-color:색상명|rgb|rgba|16진수값
+        rgb : (0-255, 0-255, 0-255)의 색상표현 방법
+        rgba :(0-255, 0-255, 0-255, 0-1) 투명도
+    </pre>
+
+    <hr>
+
+    <h2>배경색상테스트</h2>
+    <div id="bgColor">
+        배경색 적용
+    </div>
+
+    <h2>배경이미지테스트</h2>
+    <div id="bgImg">
+        배경사진
+    </div>
+
+    <h2>배경 적용 범위</h2>
+    <pre>
+        배경이 적용되는 범위
+        background-clip
+            content-box : 컨텐츠 영역에 배경 적용
+            padding-box : 패딩 영역까지 배경 적용
+            bordor-box : 외곽선까지 배경 적용
+    </pre>
+    <div class="bg-clip", id="bgClip1">
+        background-clip:content-box
+    </div>
+    <div class="bg-clip", id="bgClip2">
+        background-clip:padding-box
+    </div>    
+    <div class="bg-clip", id="bgClip3">
+        background-clip:bordor-box
+    </div>
+    <div class="bg-clip", id="bgClip4">
+        background-clip:text
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            display: flex;
+        }
+        .wrap{
+            flex-wrap: wrap;
+        }
+        .wrap-reverse{
+            flex-wrap: wrap-reverse;
+        }
+        .item{
+            width:48vw;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>container >> flex-wrap</h1>
+    <pre>
+        flex-wrap:줄바꿈 설정
+            nowrap:default, 줄바꿈 하지 않음(item의 크기를 변경)
+            wrap:줄바꿈
+            wrap-reverse:역방향으로 줄바꿈
+    </pre>
+    <h2>1. nowrap</h2>
+    <div class="row">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>2. wrap</h2>
+    <div class="row wrap">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+    <h2>3. wrap-reverse</h2>
+    <div class="row wrap-reverse">
+        <div class="item" style="background-color: red;"></div>
+        <div class="item" style="background-color: orange;"></div>
+        <div class="item" style="background-color: yellow;"></div>
+        <div class="item" style="background-color: green;"></div>
+        <div class="item" style="background-color: blue;"></div>
+    </div>
+</body>
+</html>

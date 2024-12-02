@@ -1,0 +1,13 @@
+html{
+    font-size: 20px;
+}
+
+body{
+    background-image: url('../img/bg_night.jpg');
+}
+
+.content{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: lightyellow;
+    border-radius: 20px;
+}

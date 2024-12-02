@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            width:30vw;
+            height:8vw;
+            margin:30px;
+
+            border-style:outset;
+            border-width:2vmax;
+            border-radius:20px;
+
+            padding:1vmax 2vmax;
+            font-size:2vmax;
+            color:white;
+        }
+        #btn_red{
+            background-color: red;
+        }
+        #btn:hover{
+            border-style: inset !important;
+        }
+    </style>
+<!-- 위에꺼 따로 빼서 <link rel="stylesheet" href="./...">로 불러다가 쓰기 -->
+</head>
+<body>
+    <form>
+        <div>
+            <button class="btn btn_red" id="fs" color="coral">click!</button>
+            <button class="btn">click!</button>
+            <button class="btn">click!</button>
+            <button class="btn">click!</button>
+        </div>
+    </form>
+</body>
+</html>
