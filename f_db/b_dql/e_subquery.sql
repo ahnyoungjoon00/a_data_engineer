@@ -47,6 +47,20 @@ where sal_level in
 	where max_sal < 4999999)
 order by sal_level;
 
+# ANY, or
+# in을 포함하는 개념, > >= < <= <> = != 의 비교연산
+# 서브쿼리의 결과값 중 어떤 한가지보다 크기만 하면 출력함(최솟값과 비교하게 됨)
+select emp_name, salary
+from employee
+where salary > any
+	(select salary
+	from employee
+	where dept_code =
+		(select dept_code
+		from employee
+		where emp_name = '박나라'));
+
+
 # ALL
 # 단일열 다중행 서브쿼리가 반환하는 result set과 컬럼값을 비교연산하였을 때, 모두가 true면 참, and
 # where 1 < ALL(100, 200, 300, 400, 0.9) => (t, t, t, t, f) 결과는 false
