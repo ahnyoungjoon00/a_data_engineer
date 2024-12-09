@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form 태그</h1>
+    <!-- 
+        form 태그는 사용자가 데이터를 입력할 수 있는 양식을 제공하는 태그
+        input 태그를 사용해서 사용자로부터 데이터를 입력받고,
+        입력받은 데이터를 http massage 형태로 바꿔서
+        서버에 전송하는 기능을 제공
+
+        따라서 from태그에는
+        http method, url을 설정할 수 있는 속성이 있다.
+
+        http method는 get, post밖에 없다
+    -->
+
+    <form>
+        <h2>input tag</h2>
+        <span>
+            id:
+        </span>
+        <input type="text" placeholder="id">
+        
+        <br>
+        
+        <span>
+            password:
+        </span>
+        <input type="password", placeholder="8자리 이상"> 
+        
+        <br>
+
+        <span>
+            email:
+        </span>
+        <input type="email", placeholder="address@example.com">
+
+        <br>
+
+        <span>
+            날짜:
+        </span>
+        <input type="date"> 
+
+        <br>
+
+        <span>
+            날짜: 
+        </span>
+        <input type="datetime-local" name="date">
+
+
+
+        <h2>라디오 버튼과 체크박스 버튼</h2>
+        <span>취미</span>
+        <br>
+        <span>농구</span>
+        <input type="radio" value="basketball" name="habbit">
+        <span>축구</span>
+        <input type="radio" value="football" name="habbit">
+        <span>야구</span>
+        <input type="radio" value="baseball" name="habbit">
+        <hr>
+        
+        <span>스포츠</span>
+        <br>
+        <!-- 
+        박스를 정확하게 클릭하지 않고 글씨만 클릭해도 인식되게하는..
+        -->
+        <label>농구
+            <input type="radio" value="basketball" name="habbit">
+        </label>
+        <label>축구
+            <input type="radio" value="football" name="habbit">
+        </label>
+        <label>야구
+            <input type="radio" value="baseball" name="habbit">
+        </label>
+        <hr>
+
+        <span>운동</span>
+        <br>
+        <span>농구</span>
+        <input type="checkbox" value="basketball" name="habbit">
+        <span>축구</span>
+        <input type="checkbox" value="football" name="habbit">
+        <span>야구</span>
+        <input type="checkbox" value="baseball" name="habbit">
+        <hr>
+
+        <span>액티비티</span>
+        <br>
+        <!-- 
+        박스를 정확하게 클릭하지 않고 글씨만 클릭해도 인식되게하는..
+        -->
+        <label for="checkBasketball">농구</label>
+        <input type="checkbox" id="checkBasketball" value="bascketball" name="habbit">
+        <label for="checkFootball">축구</label>
+        <input type="checkbox" id="checkFootball" value="football" name="habbit">
+        <label for="checkBasetball">야구</label>
+        <input type="checkbox" id="checkBasetball" value="baseball" name="habbit">
+        <hr>
+
+        
+        <!--  
+            button 태그를 form 태그 안에서 사용하면, 전송버튼으로 사용된다.
+            만약 일반 버튼으로 쓰고 싶다면 type="button"
+        -->
+        <button>submit</button>
+        <input type="submit" value="input submit"> 
+        <!-- 위의 두 버튼은 용도가 같다 -->
+        <br>
+        <input type="reset" value="input reset">
+        <!-- 입력했던 값을 초기화하는 버튼, url 반응은 없고 체크박스 항목들 초기화됨 -->
+        <br>
+        <button type="button">submit</button>
+        <!-- 입력한 내용을 전송하는게 아니라 그냥 일반버튼으로 써져서 눌러도 url 반응이 없음 지금은 -->
+    </form>
+    <pre>
+        form tag의 속성
+        1. action : url(전송할 데이터를 받을 url) - 처리하는 views의 함수까지 request파라미터로 전달
+        2. method : http method(get/post) -- default값 : get
+        3. enctype : 데이터의 Mime type
+                Mime type : 데이터에 대한 정보(데이터의 종류, 형식 표시) == 메타데이터이다.
+                ex) text/css : 이 데이터는 문자 데이터이고 css 포맷
+    </pre>
+    <form 
+        action='http://localhost:9898/qr'
+    >
+        <!-- html 문서에서 원하는 요소들을 그룹으로 묶어주는 태그 -->
+        <fieldset>
+            <legend>fieldset의 제목</legend>
+            
+            <span>filename : </span>
+            <input type="text" name="user">
+            <br>
+
+            <span>dataname : </span>
+            <input type="text" name="data">
+            <br>
+            <button>submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

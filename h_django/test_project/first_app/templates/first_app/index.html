@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+    <script src="{% static 'js/index.js'%}"></script>
+</head>
+<body>
+    <h1>IT'S INDEX PAGE</h1>
+    <!-- 
+    a 태그 요청 경로(url)   
+    1. http://127.0.0.1:8000
+    2. 현재 페이지 요청 url(http://127.0.0.1:8000)을 생략하고 뒷부분 나머지만 표시
+        즉, http://127.0.0.1:8000/img/ 에서 /img/만 표시
+    3. Django 탬플릿 태그를 이용(url name = 내가 정한 별명을 활용)
+    -->
+        <a href="/img/">
+            이미지 페이지로 이동
+        </a>
+        <br><br>
+
+    <button id="btn">메시지 출력</button>
+    <br><br>
+    
+    <a href="{%url 'data_form'%}">
+        사용자 정의 폼 데이터 입력
+    </a>
+    <br><br>
+    <a href="{%url 'data_form2'%}">
+        사용자 정의 폼2 데이터 입력
+    </a>
+</body>
+</html>

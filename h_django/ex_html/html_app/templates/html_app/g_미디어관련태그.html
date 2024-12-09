@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>미디어관련 태그</h1>
+    <h2>1. 오디오관련 태그</h2>
+
+    <audio src = "{% static 'assets/audio/major.mp3'%}" 
+    controls></audio>
+    <audio src = "assets/audio/twilight.mp3" 
+    controls autoplay></audio>
+    <!-- controls 없으면 배경음악처럼 삽입되어 조절은 못하게 됨 -->
+     <h2>2. 비디오관련 태그</h2>
+     <video src = "assets/video/flower.webm" 
+     width = "250px"
+     height= "250px"
+     controls></video>
+     <video src = "assets/video/video1.mp4" 
+     width = "250px"
+     height= "250px"
+     buffered
+     controls ></video>
+
+     <h3>3. iframe :현재 문서에 다른 html 페이지 삽입</h3>
+     <iframe width="560" height="315" 
+     src="https://www.youtube.com/embed/83IYMkjnRZA?si=8pdVg9eIPVNVHRtA" 
+     title="YouTube video player" 
+     frameborder="0" 
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
+</body>
+</html>

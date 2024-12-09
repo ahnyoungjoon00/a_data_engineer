@@ -1,0 +1,61 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이미지 태그</h1>
+    <img src = "{% static 'assets/img/city1.PNG'%}">
+
+    <h2>alt 속성</h2>
+    <pre>
+        이미지를 제대로 표현할 수 없는 경우
+        표시할 대체 텍스트를 작성
+    </pre>
+    <img src = "./assets/img/non.png" alt="삐에로사진">
+
+    <h3>width와 height</h3>
+    <!-- 
+    다른 파트에서는 이 부분이 필요없는 경우가 많으나
+    이미지에서만큼은 지정을 해줘야하는 부분임-->
+    <div>
+        <img src = "https://th.bing.com/th/id/OIP.ce-j2B_AaG6U37Qa2CkXsQHaHa?rs=1&pid=ImgDetMain"
+        alt = "꽃 사진1"
+        width = "200px"
+        height="150px">
+        <img src = "./assets/img/flower2.PNG"
+        alt = "꽃 사진2"
+        width = "200px"
+        height="150px">
+        <img src = "./assets/img/flower3.PNG"
+        alt = "꽃 사진3"
+        width = "200px"
+        height="150px">
+    </div>
+    <div>
+        <img src = "https://th.bing.com/th/id/OIP.ce-j2B_AaG6U37Qa2CkXsQHaHa?rs=1&pid=ImgDetMain"
+        alt = "꽃 사진1"
+        width = "200px"
+        height="150px">
+        <img src = "./assets/img/flower2.PNG"
+        alt = "꽃 사진2"
+        width = "200px"
+        height="150px">
+        <img src = "./assets/img/flower3.PNG"
+        alt = "꽃 사진3"
+        width = "200px"
+        height="150px">
+    </div>
+    <div>
+        <img src = "https://th.bing.com/th/id/OIP.ce-j2B_AaG6U37Qa2CkXsQHaHa?rs=1&pid=ImgDetMain"
+        alt = "꽃 사진1">
+        <img src = "./assets/img/flower2.PNG"
+        alt = "꽃 사진2">
+        <img src = "./assets/img/flower3.PNG"
+        alt = "꽃 사진3">
+    </div>
+</body>
+</html>
