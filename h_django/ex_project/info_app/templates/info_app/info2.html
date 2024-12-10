@@ -1,0 +1,21 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/info.css'%}">
+    <script type="text/javascript">var src_url="{%static 'image/제주도_ex.png'%}"</script>
+    <!-- 외부 js를 불러다가 장고탬플릿으로 경로를 인식하게 해주고 js파일에서는 경로를 여기로 연결 -->
+    <script src="{%static 'js/info.js'%}"></script>
+</head>
+<body>
+    <!-- <div><img src="{%static '/image/제주도_ex.PNG'%}" id="image"></div> -->
+    <!-- <br><br> -->
+    <h2 class="h2">제주여행</h2>
+    <div id="image"></div>
+    <button id="btn">제주여행</button>&nbsp;   <a href="{%url 'index'%}"><button id="btn">인덱스</button></a>
+</body>
+</html>

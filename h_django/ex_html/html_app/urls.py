@@ -13,5 +13,5 @@ urlpatterns = [
     path("g/", views.g, name="g"), 
     path("h/", views.h, name="h"),
     path("i/", views.i, name="i"), 
-    
+    path("j/", views.j, name="j"), 
 ]

@@ -1,0 +1,38 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/info.css'%}">
+    <script type="text/javascript">
+        // script태그가 body태그보다 위에 있으므로, 윈도우 이벤트 객체를 사용해서,
+        // 모든 태그가 준비되면 버튼에 클릭 이벤트를 연결하도록
+        window.onload = function(){
+            let image_btn = document.querySelector("#btn")
+            image_btn.addEventListener("click", show_img)
+        };
+
+        function show_img(){
+            // id가 image인 div태그 표현
+            let image = document.querySelector("#image")
+            // 추가할 이미지 객체를 생성
+            const img = new Image(); // 이미지 태그 객체 생성 <img>태그
+            // html 내부 스크립트 코드라서 장고 탬플릿을 사용 가능
+            img.src = "{%static 'image/제주도_ex.png'%}"
+            // 만들어진 img 태그를 div태그(image 변수)의 내부 요소로 삽입
+            image.appendChild(img) // div태그 내에서 img 태그가 동적으로 추가됨
+        }
+    </script>
+    <!-- <script src="{% static 'js/info.js'%}"></script> -->
+</head>
+<body>
+    <!-- <div><img src="{%static '/image/제주도_ex.PNG'%}" id="image"></div> -->
+    <!-- <br><br> -->
+    <h2 class="h2">제주여행</h2>
+    <div id="image"></div>
+    <button id="btn">제주여행</button>&nbsp;   <a href="{%url 'index'%}"><button id="btn">인덱스</button></a>
+</body>
+</html>

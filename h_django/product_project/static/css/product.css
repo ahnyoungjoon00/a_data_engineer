@@ -1,0 +1,26 @@
+ /* base */
+ #wrap {
+    margin: 0 auto; /*태그 영역을 가로를 기준으로 가운데로 정렬해줌*/
+    width: 90%;
+    text-align: center;
+    font-size: 12px
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  margin-left:30px;
+  margin-right: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color:red;
+}

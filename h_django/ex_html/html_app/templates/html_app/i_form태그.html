@@ -19,7 +19,8 @@
         http method는 get, post밖에 없다
     -->
 
-    <form>
+    <form action="{%url 'j'%}" method="POST">
+        {% csrf_token %}
         <h2>input tag</h2>
         <span>
             id:
@@ -46,7 +47,7 @@
             날짜:
         </span>
         <input type="date"> 
-
+        <!-- 태그 안에 name 속성을 정해주지 않으면 데이터를 입력해도 서버로 전송되지 않는다. -->
         <br>
 
         <span>
@@ -55,7 +56,7 @@
         <input type="datetime-local" name="date">
 
 
-
+        <!-- 여기서 선택을 하면 내가 정한 이름이 아니라 value값이 전송되는거임 -->
         <h2>라디오 버튼과 체크박스 버튼</h2>
         <span>취미</span>
         <br>
@@ -73,24 +74,24 @@
         박스를 정확하게 클릭하지 않고 글씨만 클릭해도 인식되게하는..
         -->
         <label>농구
-            <input type="radio" value="basketball" name="habbit">
+            <input type="radio" value="basketball" name="sports">
         </label>
         <label>축구
-            <input type="radio" value="football" name="habbit">
+            <input type="radio" value="football" name="sports">
         </label>
         <label>야구
-            <input type="radio" value="baseball" name="habbit">
+            <input type="radio" value="baseball" name="sports">
         </label>
         <hr>
 
         <span>운동</span>
         <br>
         <span>농구</span>
-        <input type="checkbox" value="basketball" name="habbit">
+        <input type="checkbox" value="basketball" name="exercise">
         <span>축구</span>
-        <input type="checkbox" value="football" name="habbit">
+        <input type="checkbox" value="football" name="exercise">
         <span>야구</span>
-        <input type="checkbox" value="baseball" name="habbit">
+        <input type="checkbox" value="baseball" name="exercise">
         <hr>
 
         <span>액티비티</span>
@@ -99,11 +100,11 @@
         박스를 정확하게 클릭하지 않고 글씨만 클릭해도 인식되게하는..
         -->
         <label for="checkBasketball">농구</label>
-        <input type="checkbox" id="checkBasketball" value="bascketball" name="habbit">
+        <input type="checkbox" id="checkBasketball" value="bascketball" name="activity">
         <label for="checkFootball">축구</label>
-        <input type="checkbox" id="checkFootball" value="football" name="habbit">
+        <input type="checkbox" id="checkFootball" value="football" name="activity">
         <label for="checkBasetball">야구</label>
-        <input type="checkbox" id="checkBasetball" value="baseball" name="habbit">
+        <input type="checkbox" id="checkBasetball" value="baseball" name="activity">
         <hr>
 
         
