@@ -1,0 +1,20 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/book.css'%}">
+    <title>Base page</title>
+</head>
+<body>
+    <div id="wrap">
+    <!-- 장고가 nvbar 파일을 가져다가 내용을 그대로 붙여줌 -->
+    {%include 'nvbar.html'%} 
+    <hr>
+    {%block content%}
+    
+    {%endblock content%}
+    </div>
+</body>
+</html>
