@@ -9,7 +9,8 @@
     <tr><th>도서가격</th><td>{{book.bookprice}}</td></tr>
     <tr><th>출판일</th><td>{{book.bookdate}}</td></tr>
     <tr><th>재고</th><td>{{book.bookstock}}</td></tr>
-    <tr><th>출판사번호</th><td>{{book.pubno}}</td></tr>
+    <tr><th>출판사</th><td>{{book.pubno.pubname}}</td></tr>
+    <!-- 외래키로 참조하여 이렇게 타고 들어감 -->
 </table>
 
 {% endblock content %}
