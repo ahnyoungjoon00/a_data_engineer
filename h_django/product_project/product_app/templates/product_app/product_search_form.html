@@ -2,19 +2,17 @@
 {% load humanize %}
 {% block content %}   
 
-<h2>상품 검색</h2>
-<form id='prdSearchFrm' method="post" action="#">
+<h2>상품 검색 : 상품명과 제조사 기준 검색</h2>
+<form id='prdSearchFrm' method="post" action="{%url 'product_search_res'%}">
     {% csrf_token %}
     <select name="type">
-        <option value="">검색조건 선택</option>
-        <option value="prd_name">상품명</option>
-        <option value="prd_maker">제조회사</option>
+        <option value="">검색어입력</option>
     </select>
     <input type="text" name="keyword">
     <input type="submit" value="검색">
 </form><br><br>
 
-
+{% if prd_list%}
     <table id="prd_list">
     <tr>
         <th>상품번호</th>
@@ -26,16 +24,16 @@
     </tr>
     {% for prd in prd_list %}
     <tr>
-        <td><a href="{% url 'product_detail' prd.prd_no %}">{{ prd.prd_no }}</a></td>
-        <td>{{ prd.prd_name }}</td>
-        <td>{{ prd.prd_price|intcomma }}</td>
-        <td>{{ prd.prd_maker}}</td>
-        <td>{{ prd.prd_color }}</td>
-        <td>{{ prd.ctg_no }}</td>
+        <td><a href="{%url 'product_detail' prd.prdno%}">{{ prd.prdno }}</a></td>
+        <td>{{ prd.prdname }}</td>
+        <td>{{ prd.prdprice|intcomma }}</td>
+        <td>{{ prd.prdmaker}}</td>
+        <td>{{ prd.prdcolor }}</td>
+        <td>{{ prd.ctgno }}</td>
     </tr>
     {% endfor %}
 </table>
 
-
+{% endif %}
 
 {% endblock content %}
