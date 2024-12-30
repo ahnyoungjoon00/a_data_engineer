@@ -72,6 +72,6 @@ def study_while() :
             print(f"{count}/5회 로그인 실패,")
         
         if (count >= 5) :
-            print("5회 로그인 실패로 권한이 막혔습니다.,")
+            print("5회 로그인 실패로 권한이 막혔습니다.")
             user = "blocked"
 study_while()

@@ -36,7 +36,7 @@ def main() :
 
             if (drink == 0) :
                 if (americano_stack < order_cnt) :
-                    print("재고가 없습니다.")
+                    print("재고가 없습니다.")  
                     continue
 
                 americano_stack -= order_cnt
