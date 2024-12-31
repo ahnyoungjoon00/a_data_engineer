@@ -5,8 +5,8 @@ def replaceData(numData): # numData	2차원 정수 배열
 
     ###########   여기부터 코딩 (1) ---------------->
     retData = numData
-    for i in range(5):
-        for j in range(5) :
+    for i in range(ARRAY_LENGTH):
+        for j in range(ARRAY_LENGTH) :
                 if (retData[i][j] < 0):
                         retData[i][j] = 0
                 elif (retData[i][j]>100) :
@@ -21,8 +21,8 @@ def getMaxSum(numData): # 요구 사항에 맞춰 처리된 2차원 정수 배�
     maxSum = 0 # 최대합
     retData = numData
     ###########   여기부터 코딩 (2) ---------------->
-    for i in range(4):
-        for j in range(4) :
+    for i in range(ARRAY_LENGTH-1):
+        for j in range(ARRAY_LENGTH-1) :
                 current_sum = retData[i][j] + retData[i][j+1] + retData[i+1][j] + retData[i+1][j+1]
                 if current_sum > maxSum :
                         maxSum = current_sum
