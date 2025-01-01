@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/qr.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+    
+    <!-- defer : 모든 요소를 랜더링 한 다음 js파일 -->
+    <script src="./assets/js/clock.js" defer></script>
+    <!-- 
+        미디어쿼리 : 화면의 수치, 단말기 종류에 따라 다른 스타일을 적용시켜 주는 구문
+            @media [not|only][매체유형 and](표현식){스타일코드}
+            미디어쿼리 속성 : width, height, aspect-ratio(화면비율), 
+                            device-width, device-height, device-aspect-ratio
+            표현식 : 결과가 참이면 미디어쿼리 적용, 거짓이면 미디어쿼리 미적용
+                    > < >= <=
+                    width > 600px
+
+            not : 표현식의 결과를 부정할 때 사용
+            only : 구형브라우저일 때 사용
+    -->
+    <link rel="stylesheet" media="screen and (max-aspect-ratio:5/4)" href="./assets/css/qr_mob.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo con">
+            <div class="logo_txt"><i class="fa-solid fa-qrcode"></i></div>
+        </div>
+    </div>
+    <div class="section con">
+        <div class="content con_arround">
+            <div class="main-banner con">
+                <div class="welcome">Welcome 2024</div>
+                <div class="clock">11:11:11</div>
+            </div>
+            <form class="qr" action="http://localhost:9898/qr">
+                <input type="text" class="inp_qr" 
+                    placeholder="Write QR"
+                    name="data">
+            </form>
+        </div>
+    </div>
+    <div class="footer con_start">
+        <div class="copyright">written by hmd</div>
+    </div>
+</body>
+</html>

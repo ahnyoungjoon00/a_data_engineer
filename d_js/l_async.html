@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Async</h1>
+    <script>
+        const studyCallback = () => {
+            setTimeout(() => {
+                let now = new Date()
+                let clock = `${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`;
+                console.log(clock, "시작과 동시에 다음꺼 하러가고 뒤에서 따로 돌게 넘겨버림")
+                setTimeout(() => {
+                    let now = new Date()
+                    let clock = `${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`;
+                    console.log(clock, "시작과 동시에 다음꺼 하러가고 뒤에서 따로 돌게 넘겨버림")
+
+                    setTimeout(() => {
+                        let now = new Date()
+                        let clock = `${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}`;
+                        console.log(clock, "시작과 동시에 다음꺼 하러가고 뒤에서 따로 돌게 넘겨버림")
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }
+        
+        const studyMethodChain = () => {
+            // method chain
+            const chainObj = {
+                sum: 0,
+                add: function (num) {
+                    this.sum += num;
+                    return this;
+                }
+            }
+
+            chainObj
+                .add(10)
+                .add(5)
+                .add(20);
+        }
+
+        // 동기/비동기/블로킹/논블로킹
+        // 동기 synchronous => syn +chronous
+        //     윗 라인 코드의 종료시점과 아래 라인 코드의 시작시점의 시간을 맞춘다.
+
+        // 비동기 asynchronous => a + syn + chronous
+        //     윗 라인 코드의 종료시점과 아래 라인 코드의 시작시점의 시간을 맞추지 않는다.
+
+        // 블로킹 : 자원을 독점하고, 다른 쓰레드가 자원에 접근하는 것을 막는 것.
+        // 논블로킹 : 자원을 독점하지 않음
+
+        // promise
+        // 상태
+        // 1. pending       : 작업이 진행 중인 상태
+        // 2. fullfilled    : 작업이 성공적으로 완료된 상태
+        // 3. rejected      : 작업이 실패로 끝난 상태
+
+        // 후속처리메서드
+        // 1. then      : Promise가 fullfilled 상태일때, 실행되는
+        // 2. catch     : Promise가 rejected 상태일때, 실행되는
+        // 3. finally   : Promise의 상태와 상관없이 실행되는
+
+        const promiseCount = count => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(count<0){
+                        reject(new Error("카운트가 음수일 수 없어"))
+                    }
+                    console.log(count + "초");
+                    count++;
+                    resolve(count);
+                }, 3000);
+            });
+        }
+        const studyPromise = () => {
+            promiseCount(1)
+            .then(count => promiseCount(count))
+            .then(count => promiseCount(count))
+            .then(count => promiseCount(count))
+            .catch(error => {
+                console.log("catch")
+                console.error(error)
+            })
+            .finally(() => {
+                console.log("반드시 실행되는 함수")
+            })
+        }
+        // // console.log(promiseCount(3));
+
+        // const promiseObj = promiseCount(0)
+        // // console.log(promiseObj);
+        // promiseObj.then(count =>{
+        //     console.log(count)
+        // });
+
+        // const promise2 = promiseObj.then(count => {
+        //     console.log(count);
+        //     throw new Error("error")
+        //     return count
+        // })
+        
+        // const promise3 = promiseObj.then(count => {
+        //     console.log(count);
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             if(count <0){
+        //                 reject(new Error("카운트는 음수 일 수 없어"));
+        //             }
+        //             console.log(count + "초");
+        //             count++
+        //             resolve(count);
+        //         }, 3000);
+        //     })
+        // })
+
+
+        // // console.log(promiseObj);
+        // promise2.then(res =>{
+        //     console.log(res)
+        // });
+
+        // setTimeout(() => {
+        //     console.dir(promiseObj)
+        // }, 3100)
+
+        // // then 메서드의 인자로 전달되는 콜백함수의 반환값에 따라
+        // // then 메서드가 반환하는 promise객체의 상태와 결과값이 달라진다.
+
+        // // method chain
+        // const chainObj = {
+        //     sum : 0,
+        //     add : function(num){
+        //         this.sum+=num;
+        //         return this;
+        //     }
+        // }
+
+        // chainObj.add(10).add(5).add(20);
+        // console.dir(chainObj.sum);
+
+        // async await
+        // 함수 앞에 async 키워드를 추가
+        // await 키워드를 사용해, 비동기 코드를 동기적으로 편하게 다룰 수 있다.
+        // await :
+        //      promise를 반환하는 함수를 호출할 때, 앞에 사용
+        //      해당 promise가 작업을 종료하기를 기다린 후, 다음 라인의 코드를 수정하게 한다.
+
+        async function asyncCount(){
+            try {let count =-99;
+                count = await promiseCount(count);
+                count = await promiseCount(count);
+                count = await promiseCount(count);
+                count = await promiseCount(count);
+                console.log(count);
+            }catch(error){
+                console.log("error 발생")
+            }finally{
+                console.log("무조건 발생")
+            }
+        }
+        asyncCount();
+    </script>
+</body>
+
+</html>

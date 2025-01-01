@@ -1,0 +1,22 @@
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.con_start{
+    display: flex;
+    align-items: center;
+}
+
+.con_arround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.con_between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

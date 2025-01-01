@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/button.css">
+</head>
+<body>
+    <h1>JS를 사용해서 CSS 조작</h1>
+    <div>
+        <button class="btn btn_red">red</button>
+        <button class="btn btn_blue">blue</button>
+        <button class="btn btn_green">green</button>
+        <button class="btn btn_pink">pink</button>
+    </div>
+    <script>
+        const btns = document.querySelectorAll(".btn");
+        btns.forEach(e => {
+            e.addEventListener("mouseover", ev =>{
+                target = ev.target;
+                //element 객체의 style속성으로 css를 수정할 수 있다.
+                //kebab-case( - 두 단어를 연결)을 camelCase (두 단어를의 구분을 대문자로 함)로 변경
+                // ex) background-color => backgroundColor
+                target.className += " btn_round";
+            })
+            // e.addEventListener("mouseout", ev =>{
+            //     target = ev.target;
+            //     //element 객체의 style속성으로 css를 수정할 수 있다.
+            //     //kebab-case( - 두 단어를 연결)을 camelCase (두 단어를의 구분을 대문자로 함)로 변경
+            //     // ex) background-color => backgroundColor
+            //     target.className.remove(" btn_round")
+            // })
+        })
+    </script>
+    
+</body>
+</html>

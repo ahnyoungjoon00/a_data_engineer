@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/button.css">
+    <style>
+        .note {
+            border: thin solid;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM(document object model)</h1>
+    <h2>textNode가 없는 element를 추가/삭제</h2>
+    <div id="nodeNote" class="note"></div>
+    <button class="btn btn_red" id="btnAddText">add Element</button>
+    <script>
+        // 아이디가 btnAddText인 Element에 클릭이벤트를 걸어주세요.
+        // 클릭이벤트의 콜백함수에서 alert('prac') 호출해주세요.
+        const btn = document.querySelector('#btnAddText')
+        btn.addEventListener('click', ev => {
+            const imgElement = document.createElement('img');
+            imgElement.src = './assets/img/html.jpg';
+
+            imgElement.addEventListener('click', ev => {
+                // 1. remove()
+                //  ev.target.remove();
+                // 2. display:none
+                //  css display 속성을 none
+                ev.target.style.display = 'none';
+            })
+
+            const note = document.querySelector('#nodeNote');
+            note.appendChild(imgElement);
+        });
+
+    </script>
+
+    <h2>텍스트노드가 있는 element를 추가 삭제</h2>
+    <div id="nodeNote2" class="note"></div>
+    <button class="btn btn_red" id="btnAdd">add Element</button>
+    <button class="btn btn_blue" id="btnClear">clear Element</button>
+    <script>
+        document.querySelector('#btnAdd').addEventListener('click', ev => {
+            const h4Element = document.createElement('h4');
+            const textNode = document.createTextNode('반가워. 자바스크립트');
+
+            // 노드 연결
+            h4Element.appendChild(textNode);
+            const note = document.querySelector('#nodeNote2');
+            note.appendChild(h4Element);
+        });
+        
+        document.querySelector("#btnClear").addEventListener("click", ev =>{
+            const note = document.querySelector("nodeNote2");
+            note.innerHTML = '';
+        })
+    </script>
+    
+</body>
+</html>

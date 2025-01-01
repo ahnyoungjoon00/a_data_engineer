@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this</h1>
+    <script>
+        // 1. 전역에서 this는 전역객체를 가리킨다.
+        console.log(this)
+
+        // 2. 함수 안에서 this, 전역객체
+        function a(){
+            console.dir(this)
+        }
+        a()
+
+        // 3. 메서드 안의 this, 객체
+        let aClass = {
+            who : "aClass",
+            info : function(){
+                console.log(this)
+            }
+        }
+        let bClass = {
+            who : "bClass",
+            info : aClass.info
+        }
+        aClass.info()
+        bClass.info()
+
+        // 4. 생성자함수에서의 this
+        function Info(){
+            this.kor =100;
+            this.math=85;
+            console.log(this)
+        }
+        const info = new Info();
+        info.eng = 95;
+        console.log(info)
+
+        // 화살표함수에서의 this
+        // 일반함수는 호출 시에 this를 인자로 받는다.
+        // 화살표함수는 this를 인자로 받지 않는다 => this라는 이름의 숨겨진 매개변수는 없다.
+        const arrowObj = {
+            age : 15,
+            title : 'hello',
+            methodFnc : function(){
+                // const that = this;
+                // const normalFnc = function(){
+                //     console.log(that.title)
+                // }
+
+                // normalFnc()
+
+                const arrowFnc = () => {
+                    console.log(this.title)
+                }
+
+                arrowFnc()
+            }
+        }
+
+        arrowObj.methodFnc();
+
+        // 5. 명시적 this 바인딩
+        console.dir(aClass.info)  
+        
+        function changeWho(who){
+            console.log(this)
+            this.who = who;
+        }
+
+        changeWho.apply(aClass, ['zStudent']);
+        console.log(aClass);
+
+    </script>
+</body>
+</html>

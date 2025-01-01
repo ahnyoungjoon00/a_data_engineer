@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/button.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <style>
+        .log{
+            width:100vw;
+            height:50vh;
+        }
+    </style>
+</head>
+<body>
+    <div id = "wrap">
+        <button class="btn btn_red" id="html.jpg">html</button>
+        <button class="btn btn_blue" id="python.jpg">css</button>
+        <button class="btn btn_green" id="css.png">hs</button>
+        <button class="btn btn_pink" id="js.webp">python</button>
+    </div>
+    <div class="con">
+        <div id="logo"></div>
+    </div>
+
+    <script>
+        wrap.addEventListener("mouseover", ev => {
+            const target = ev.target;
+            if(target.id == "wrap") return;
+
+            const imgElement = document.createElement("img");
+            imgElement.src=`./assets/img/${target.id}`;
+            imgElement.style.width="50vw";
+            imgElement.style.height="30vh";
+            imgElement.style.objectFit="contain";
+            logo.appendChild(imgElement)
+        })
+        wrap.addEventListener("mouseout", ev => {
+            logo.innerHTML='';
+        })
+    </script>
+    
+</body>
+</html>

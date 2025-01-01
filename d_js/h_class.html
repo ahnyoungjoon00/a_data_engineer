@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>class</h1>
+    <script>
+
+        class Person {
+            // public filed
+            name;
+            // private field
+            #gender;
+            // static 
+            static species = 'mamalia';
+            // 상수
+            HABIT = 'earth';
+
+            constructor(name, gender) {
+                this.name = name;
+                this.#gender = gender;
+            }
+
+            get gender() {
+                return this.#gender
+            }
+
+            set gender(arg) {
+                this.#gender = arg;
+            }
+
+            info() {
+                console.log(`${this.name}: ${this.#gender}`);
+            }
+        }
+
+        let hmd = new Person('하명도', '남');
+        console.dir(hmd);
+        console.dir(hmd.name);
+        console.dir(hmd.gender);
+
+        class Employee extends Person {
+            #major
+            constructor(name, gender, major) {
+                super(name, gender);
+                this.#major = major
+            }
+
+            get major() {
+                return this.#major
+            }
+
+            set major(arg) {
+                this.#major = arg
+            }
+        }
+
+        let user = new Employee('하명도', '남', '강사');
+        console.dir('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+        console.dir(user)
+        console.dir(user.__proto__)
+        user.__proto__ = {m:'프로도'}
+        console.dir(user.m)
+    </script>
+</body>
+
+</html>

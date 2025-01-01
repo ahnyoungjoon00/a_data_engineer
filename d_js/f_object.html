@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>object</h1>
+    <!-- 웹 - 검사 - 콘솔창에서 출력데이터 확인가능 -->
+    <script> 
+        let top1 = {
+            title : '소년이 온다',
+            awards : ['노벨문학상', '이상문학상'],
+            category : {depth1: '문학', depth2: '소설'},
+            'categoryCode':12,
+            info:function(){
+                console.log(this.title)
+            }
+        }
+        let top2 = {
+            title : '당신의 이름을 지어다가 며칠은 먹었다',
+            awards : [' 젊은 예술가상'],
+            category : {depth1: '문학', depth2: '시'},
+            'categoryCode':12,
+            info:function(){
+                console.log(this.title)}
+        }
+        let top3 = {
+            title : 'Object',
+            awards : [],
+            category : {depth1: '기술', depth2: 'IT'},
+            'categoryCode':15,
+            info:function(){
+                console.log(this.title)}
+        }
+        console.dir(top1)
+        console.dir(top1.title)
+        console.dir(top1["categoryCode"])
+
+        // Object.keys()
+        console.log(Object.keys(top1))
+        console.log(Object.values(top1))
+        
+        // for-in
+        for(const key in top2){
+            console.log(`${key}=${top2[key]}`)
+        }
+
+        // groupby
+        const datas = [top1, top2, top3]
+        // 카테고리별 요소
+        const grouped = Map.groupBy(datas, ({category}) => category.depth1);
+        console.dir(grouped.get('문학'));
+        console.dir(grouped.get('기술'));
+
+        top2.info();
+    </script>
+</body>
+</html>

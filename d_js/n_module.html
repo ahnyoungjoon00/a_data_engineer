@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>module</h1>
+    <script type="module">
+        // import 변수나 함수 from "경로"
+        // 모듈에서 default export한 변수나 함수를 가져온다.
+        import clap from './assets/js/module/ecma.js'
+        clap();
+
+        import {odd, even} from './assets/js/module/ecma.js'
+        console.log(odd);
+        console.log(even);
+        
+        import * as m from './assets/js/module/ecma.js'
+    </script>
+</body>
+</html>

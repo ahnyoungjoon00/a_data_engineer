@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./d_js_lec/assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/button.css">
+</head>
+<body>
+    <h1>HTML element 객체에 JS를 사용해서 접근해기</h1>
+    <div>
+        <button class="btn btn_red">red</button>
+        <button class="btn btn_blue">blue</button>
+        <button class="btn btn_green">green</button>
+        <button class="btn btn_pink">pink</button>
+    </div>
+    <script>
+        // element 객체 가져오기
+        // css선택자로 원하는 element객체를 가져온다.
+        // 만약 선택자에 해당하는 element객체가 여러 개이면 0번 인덱스의 element 객체만 가져온다.
+        // document.queryselecter("css 선택자")
+
+        const btn = document.querySelector('.btn')
+        console.dir(btn.classList[0])
+        // document.queryselectorAll("css 선택자")
+        const btns = document.querySelectorAll('.btn')
+        console.dir(btns)
+
+        // event : 프로그램에서 일어나는 사건
+        //         사용자 이벤트 : 클릭, 드래그, 키보드 입력, 마이크 입력, ...
+        //         컴퓨터 이벤트 : 통신에 대한 응답이 도착, 예외 발생, 화면 로드 완료, ...
+
+        // event target : 이벤트가 발생한 대상
+
+        btn.addEventListener("click", ev => {
+            alert("버튼클릭");
+            console.dir(ev);
+        })
+
+        btns.forEach(node => {
+            node.addEventListener("click", ev =>{
+                target = ev.target;
+                const text = prompt("btn text");
+                if(!text){
+                    return;
+                }
+                target.textContent = text;
+            })
+        })
+    </script>
+    
+</body>
+</html>
