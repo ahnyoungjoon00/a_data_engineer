@@ -1,0 +1,157 @@
+drawInfo(){
+  document.querySelector('#addInfo').innerHTML = '';
+  const str = `
+  <select id='year' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>년도선택</option>
+        <option value="1">2023</option>
+        <option value="2">2024</option>
+        <option value="3">2023 vs 2024</option>
+  </select>        
+  `
+  $('#addInfo').append(str);
+  const str2 = `
+  <select id='month' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>월 선택</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+  </select>        
+  ` 
+  $('#addInfo').append(str2);
+  const str3 = '<input type="button" id="resBtn" value="Result">'
+  $('#addInfo').append(str3);
+  document.querySelector('#chartBox').innerHTML = '';
+  return true;
+}
+
+drawInfo2(){
+  document.querySelector('#option').innerHTML = '';
+  const str = `
+  <select id='temp' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option value="1" selected>평균기온</option>
+        <option value="2">최고기온</option>
+        <option value="3">최저기온</option>
+  </select>        
+  `
+  $('#option').append(str);
+  return true;
+}
+
+  let date=null;
+  let year=null;
+  let lowTmp=null;
+  let highTmp=null;
+  let avgTmp=null;
+  let cloudData=null;
+  let mode=null;
+  }
+
+drawChartFin(date, year, tmpData, mode){
+  /////////////////////////////////////////////////////////////////////////
+  // 그래프 그리기 
+  console.log(tmpData)  
+  var tmp = {
+      x: Object.keys(tmpData[0]),
+      y: Object.values(tmpData[0]),
+      mode:'lines+markers',
+      line:{
+          dash:'dot',
+          width:2,
+          color:'red',
+          shape: 'spline'
+      },
+      name:'기온('+year[0][0]+')',
+    };
+
+  if (mode == '3'){
+    var tmp1 = {
+      x: Object.keys(tmpData[1]),
+      y: Object.values(tmpData[1]),
+      mode:'lines+markers',
+      line:{
+          dash:'dot',
+          width:2,
+          color:'blue',
+          shape: 'spline'
+      },
+      name:'기온('+year[1][0]+')',
+    };
+  }
+
+  let val = Object.keys(date[0]).map(Number);
+  let text = Object.values(date[0]);
+
+  console.log(val);
+  console.log(text);
+  //console.log(year[1][0]);
+  var title=""
+  if(mode=="3"){
+    title="월별 기온 변화";
+  }else if (mode=="2"){
+   // console.log(year);
+    title=year[0][0]+"년 월별 기온 변화";
+  }else {
+    title=year[0][0]+"년 월별 기온 변화";
+  }
+
+  var layout = {
+      title: {
+        text:title,
+        font: {
+          family: 'Courier New, monospace',
+          size: 24
+        },
+        xref: 'paper',
+        x: 0.5,
+      }, //title 끝
+      xaxis: {
+        title: {
+          text: 'date',
+          font: {
+            family: 'Courier New, monospace',
+            size: 18,
+            color: 'black'
+          }
+        },
+        showline:true,
+        showgrid:false,
+        gridcolor:'#dcdcdc',
+        ticklen:5,
+        dtick:1,
+        ticktext:text, //초기값 1 선이 나오면 움직이면 됨
+        tickvals:val    
+      }, //x축 끝
+      yaxis: {
+        title: {
+          text: '기온의 변화',
+          font: {
+            family: 'Courier New, monospace',
+            size: 18,
+            color: 'black'
+          }
+        },
+        showline:false,
+        showgrid:true,
+        gridcolor:'#dcdcdc',
+        tickformat: ",.0f",
+        ticklen:5,
+        griddash:'dot',
+        range:[-5,40]
+      } //y축 끝
+    }; //layout 끝    
+    if (mode=='3'){      
+    var data = [tmp, tmp1];
+    } else {
+      var data = [tmp];
+    }
+    Plotly.newPlot('chartBox', data, layout); 
+} //drawChartfin 끝 
