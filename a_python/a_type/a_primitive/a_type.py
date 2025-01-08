@@ -1,3 +1,13 @@
+a = [1, 2, 3]
+b = a
+a.append("a")
+print(a)
+print(b)
+b.append("b")
+print(a)
+print(b)
+print(len(a))
+
 print("Hello World!")
 
 """ literal 확인

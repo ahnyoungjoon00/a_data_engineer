@@ -1,0 +1,8 @@
+<nav>
+    <ul>
+        <li><a href="{% url 'index'%}">HOME</a></li>
+        <li><a id="list" href="#">도서정보조회</a></li>
+        <li><a id="list2" href="{%url 'insert'%}">도서등록</a></li> 
+        {% comment %} 도서등록 메뉴는 정보입력 템플릿 요청 {% endcomment %}
+    </ul>
+</nav>
