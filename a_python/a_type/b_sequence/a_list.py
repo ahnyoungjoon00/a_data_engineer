@@ -13,7 +13,7 @@ list :
 C : create
 R : read
 U : update
-D :delete
+D : delete
 """
 
 def list_create() :

@@ -9,6 +9,6 @@ def str_read() :
     print(id(max(msg)), max(msg), id(min(msg)), min(msg))
     print(msg[3])
 
-    for e in msg :
-        print(e)
+#     for e in msg :
+#         print(e)
 str_read()

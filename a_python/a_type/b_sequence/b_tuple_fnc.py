@@ -41,9 +41,17 @@ def fnc5():
     a = (30, 8, 900, 7, -9, 100, 7)
     print(a.count(7))
 
+# fnc1()
+# fnc2()
+# fnc3()
+# fnc4()
+# fnc5()
 
-fnc1()
-fnc2()
-fnc3()
-fnc4()
-fnc5()
+a = (1, 'a', True, (1,2,3))
+b = (1.1, None)
+c = a + b
+d = c + (1)
+e = c + (1, )
+print(c)
+print(d)
+print(e)

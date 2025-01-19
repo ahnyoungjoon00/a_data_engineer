@@ -38,7 +38,7 @@ class Server :
 
             if len(url_tokens) >= 2 :
                 query_string = url_tokens[1]
-
+    
                 # [query1=a, query2=b, query3=c]
                 param_dict = {}
                 params = query_string.split("&")

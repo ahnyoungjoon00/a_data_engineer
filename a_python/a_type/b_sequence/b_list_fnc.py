@@ -71,14 +71,14 @@ def fnc7():
     b = a.copy()
     print(b)
 
-# fnc1()
-# fnc2()
-# fnc3()
-# fnc4()
-# fnc5()
-# fnc5_1()
-# fnc6()
-# fnc7()
+fnc1()
+fnc2()
+fnc3()
+fnc4()
+fnc5()
+fnc5_1()
+fnc6()
+fnc7()
 
 def copy() :
     starbuks = ["아메리카노", "카페라떼", "프라푸치노"]

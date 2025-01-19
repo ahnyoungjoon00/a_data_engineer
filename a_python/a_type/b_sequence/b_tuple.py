@@ -18,4 +18,9 @@ def tuple_read() :
 
     for x in a :
         print(x)
-tuple_read()
+# tuple_read()
+a = (1, 3, 5, "a", "b")
+
+for i in range(len(a)-1): # read : index, slicing
+        print(a[i])    # indexing
+        print(a[i:i+2])# slicing
