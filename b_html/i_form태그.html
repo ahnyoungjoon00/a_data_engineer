@@ -59,12 +59,14 @@
         <h2>라디오 버튼과 체크박스 버튼</h2>
         <span>취미</span>
         <br>
-        <span>농구</span>
-        <input type="radio" value="basketball" name="habbit">
+        <span>농구
+            <input type="radio" value="basketball" name="habbit">
+        </span>
+        <label>야구
+            <input type="radio" value="baseball" name="habbit">
+        </label>
         <span>축구</span>
         <input type="radio" value="football" name="habbit">
-        <span>야구</span>
-        <input type="radio" value="baseball" name="habbit">
         <hr>
         
         <span>스포츠</span>
@@ -73,13 +75,13 @@
         박스를 정확하게 클릭하지 않고 글씨만 클릭해도 인식되게하는..
         -->
         <label>농구
-            <input type="radio" value="basketball" name="habbit">
+            <input type="radio" value="basketball" name="play">
         </label>
         <label>축구
-            <input type="radio" value="football" name="habbit">
+            <input type="radio" value="football" name="play">
         </label>
         <label>야구
-            <input type="radio" value="baseball" name="habbit">
+            <input type="radio" value="baseball" name="play">
         </label>
         <hr>
 
@@ -102,8 +104,11 @@
         <input type="checkbox" id="checkBasketball" value="bascketball" name="habbit">
         <label for="checkFootball">축구</label>
         <input type="checkbox" id="checkFootball" value="football" name="habbit">
-        <label for="checkBasetball">야구</label>
-        <input type="checkbox" id="checkBasetball" value="baseball" name="habbit">
+        <label for="checkBaseball">야구</label>
+        <input type="checkbox" id="checkBaseball" value="baseball" name="habbit">
+        <label>야구
+        <input type="checkbox" value="baseball" name="habbit">
+        </label>
         <hr>
 
         
@@ -114,7 +119,7 @@
         <button>submit</button>
         <input type="submit" value="input submit"> 
         <!-- 위의 두 버튼은 용도가 같다 -->
-        <br>
+        <br><hr>
         <input type="reset" value="input reset">
         <!-- 입력했던 값을 초기화하는 버튼, url 반응은 없고 체크박스 항목들 초기화됨 -->
         <br>
